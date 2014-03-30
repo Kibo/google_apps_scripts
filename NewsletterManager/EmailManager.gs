@@ -44,7 +44,8 @@ EmailManager.prototype.sendEmail = function(to, subject, body, attachments) {
 	}
 
 	MailApp.sendEmail(email);
-}
+};
+
 /**
  * Get data for sending
  * @param {?number} maxRows
@@ -68,7 +69,8 @@ EmailManager.prototype.getData = function(maxRows) {
 	}
 
 	return data;
-}
+};
+
 /**
  * Update row in spreadsheet
  * @param {Object} data
@@ -78,7 +80,8 @@ EmailManager.prototype.update = function(data) {
 		var range = this._sheet.getRange(this.getRowNumberByEmail(data.email), EmailManager.FIRST_COLUMN, 1, EmailManager.HEADER.length);
 		range.setValues([this._getArrayFromObject(data)]);
 	}
-}
+};
+
 /**
  * Find number of row by email
  * @param {string} email
@@ -94,7 +97,8 @@ EmailManager.prototype.getRowNumberByEmail = function(email) {
 		}
 	}
 	Logger.log("Can not find row with Email: " + email);
-}
+};
+
 /**
  * Find row by email
  * @param {string} email
@@ -110,7 +114,8 @@ EmailManager.prototype.findRowByEmail = function(email) {
 		}
 	}
 	Logger.log("Can not find row with Email: " + email);
-}
+};
+
 /**
  * Get unsubscribe url
  * Params are encoded with Base64
@@ -123,7 +128,8 @@ EmailManager.prototype.getUnsubscribeUrl = function(email) {
 		"email" : email,
 		"sheet" : this._sheet.getName()
 	}), Utilities.Charset.UTF_8);
-}
+};
+
 /**
  * Decode token encoded as Base64
  * @param {string} encodedToken
@@ -132,7 +138,8 @@ EmailManager.prototype.getUnsubscribeUrl = function(email) {
 EmailManager.decodeToken = function(encodedToken) {
 	var decoded = Utilities.base64Decode(encodedToken, Utilities.Charset.UTF_8);
 	return JSON.parse(Utilities.newBlob(decoded).getDataAsString());
-}
+};
+
 /*
  * Get object from array
  * @private
@@ -147,7 +154,8 @@ EmailManager.prototype._getObjectFromArrays = function(keys, data) {
 	}
 
 	return object;
-}
+};
+
 /**
  * Get array from object values
  * @private
@@ -160,7 +168,8 @@ EmailManager.prototype._getArrayFromObject = function(obj) {
 		arr.push(obj[prop]);
 	}
 	return arr;
-}
+};
+
 /**
  * Verifies data object
  * @private
@@ -176,14 +185,15 @@ EmailManager.prototype._isDataValid = function(data) {
 	}
 
 	return true;
-}
+};
+
 /*
  * Get last row in sheet without header of table
  * @private
  * @return {number}
  */
 EmailManager.prototype._getDataLastRow = function() {
-	return this._sheet.getLastRow() - (EmailManager.FIRST_ROW - 1 )
+	return this._sheet.getLastRow() - (EmailManager.FIRST_ROW - 1 );
 }
 /**
  * Max count of rows for sending email
@@ -199,54 +209,53 @@ EmailManager.MAX_ROWS = MailApp.getRemainingDailyQuota();
  * @constant
  * @type {Object}
  */
-EmailManager.HEADER = ['email', 'isSend', 'isUnsubscribe', 'hasError']
+EmailManager.HEADER = ['email', 'isSend', 'isUnsubscribe', 'hasError'];
 
 /**
  * Line of first row of data
  * @constant
  * @type {number}
  */
-EmailManager.FIRST_ROW = 2
+EmailManager.FIRST_ROW = 2;
 
 /**
  * Line of first data column
  * @constant
  * @type {number}
  */
-EmailManager.FIRST_COLUMN = 1
+EmailManager.FIRST_COLUMN = 1;
 
 /**
  * Unsubscribe action
  * @constant
  * @type {string}
  */
-EmailManager.UNSUBSCRIBE = "unsubscribe"
+EmailManager.UNSUBSCRIBE = "unsubscribe";
 
 /**
  * Subscribe action
  * @constant
  * @type {string}
  */
-EmailManager.SUBSCRIBE = "subscribe"
+EmailManager.SUBSCRIBE = "subscribe";
 
 /**
  * Param name
  * @constant
  * @type {string}
  */
-EmailManager.PARAM_NAME = "p_token"
+EmailManager.PARAM_NAME = "p_token";
 
 /**
  * Admin email
  * @constant
  * @type {string}
  */
-EmailManager.ADMIN_EMAIL = "tomasjurman@gmail.com"
+EmailManager.ADMIN_EMAIL = "XXX@gmail.com";
 
 /**
  * Google Spreadsheet id
  * @constant
  * @type {string}
  */
-EmailManager.SPREADSHEET_ID = "0Au095ikOvxFidGhZTEdDeTBTVUhhT3lCSmNwUVFHTkE"
-
+EmailManager.SPREADSHEET_ID = "123";
