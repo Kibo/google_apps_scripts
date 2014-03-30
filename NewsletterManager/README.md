@@ -7,4 +7,4 @@
 6. Publish > Deploy as web app ...
 
 ### Screen from Data source
-![newsletter](#)
+![newsletter](https://raw.githubusercontent.com/Kibo/google_apps_scripts/master/screens/newsletter.png)
