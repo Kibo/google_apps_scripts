@@ -1,5 +1,5 @@
 # Newsletter manager
-1. Create new Spreadsheet
+1. Create new Spreadsheet (Data source)
 2. Tools > Script editor ...
 3. Set EmailManager.ADMIN_EMAIL
 4. Set EmailManager.SPREADSHEET_ID

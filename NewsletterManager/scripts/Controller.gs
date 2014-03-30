@@ -20,10 +20,15 @@ function doGet(e) {
 
 		default:
 			template = HtmlService.createTemplateFromFile('error');
-			template.errorMessage = "Unknown action."
+			template.errorMessage = "Unknown action.";
 			return template.evaluate();
 	}
-}
+};
+
+function doPost(e){
+  //TODO
+  // subscribe new email
+};
 
 /**
  * Unsubscribe action
@@ -32,7 +37,7 @@ function doGet(e) {
 function unsubscribeAction(params) {
 	var manager = new EmailManager(EmailManager.SPREADSHEET_ID, params.sheet);
 	var obj = manager.findRowByEmail(params.email);
-	obj.isUnsubscribe = 1
+	obj.isUnsubscribe = 1;
 	manager.update(obj);
 }
 
