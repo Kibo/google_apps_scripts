@@ -13,7 +13,8 @@ function publish() {
    // Send emails
    for(var i = 0, max = data.length; i < max; ++i){       
      var template = HtmlService.createTemplateFromFile( TEMPLATE_NAME );     
-     template.unsubscribeUrl = manager.getUnsubscribeUrl( data[i].email );         
+     template.email = data[i].email
+     template.unsubscribeUrl = manager.getUnsubscribeUrl( data[i].email );          
        
      try{       
        manager.sendEmail( data[i].email, EMAIL_SUBJECT, template.evaluate().getContent()); 
