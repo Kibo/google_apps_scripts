@@ -44,7 +44,6 @@ This form place in your web page. Newsletter Service can manage many of your pro
 ```
 
 ![Subscribe](https://raw.githubusercontent.com/Kibo/google_apps_scripts/master/screens/subscribe_screen.png)
-![Unsubscribe](https://raw.githubusercontent.com/Kibo/google_apps_scripts/master/screens/unsubscribe_screen.png)
 
 ### Resources
 - [Newsletter service with Google Apps Script](#)
