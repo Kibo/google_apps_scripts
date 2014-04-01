@@ -66,6 +66,7 @@ function subscribeAction(params) {
 
 	var manager = new EmailManager(EmailManager.SPREADSHEET_ID, params.sheet);	
 	manager.create( params );
+	manager.sendEmail( EmailManager.ADMIN_EMAIL, "New subscriber", "<ul><li>Email: " + params.email + "</li><li>Sheet: " + params.sheet + "</li></ul>" ); 
 }
 
 
