@@ -15,7 +15,12 @@ var EmailManager = function(spreadsheetId, sheetName) {
 	if (!this._sheet) {
 		throw "The sheet with the name " +  sheetName + " not found.";      
 	}
-
+        
+    // no data
+    if( EmailManager.FIRST_ROW > this._sheet.getLastRow() ){
+       throw "There is no data."; 
+    }
+    
 	this._data = this._sheet.getRange(EmailManager.FIRST_ROW, EmailManager.FIRST_COLUMN, this._getDataLastRow(), this._sheet.getLastColumn()).getValues();
 }
 
@@ -100,7 +105,7 @@ EmailManager.prototype.create = function( data ){
 
   Logger.log("Create new row " + data.email);  
   var range = this._sheet.getRange( this._sheet.getLastRow() + 1, EmailManager.FIRST_COLUMN, 1, EmailManager.HEADER.length); 
-  range.setValues( [ [data.email, 0, 0, 0] ]); 
+  range.setValues( [ [data.email, 0, 0, 0] ]);
 }
 
 /**
@@ -109,9 +114,9 @@ EmailManager.prototype.create = function( data ){
 EmailManager.prototype.reset = function(){
   
   if( EmailManager.HEADER.indexOf('isSend') == -1 ){
-    return
-  } 
-  
+    return;
+  }
+     
   // Select 'isSend' column
   var range = this._sheet.getRange( EmailManager.FIRST_ROW, EmailManager.HEADER.indexOf('isSend') + 1, this._sheet.getLastRow() - 1, 1);
   range.setValue(0);
@@ -163,6 +168,7 @@ EmailManager.prototype.getUnsubscribeUrl = function( email ){
 
 /**
 * Decode token encoded as Base64
+* @static
 * @param {string} encodedToken
 * @return {object}
 */
