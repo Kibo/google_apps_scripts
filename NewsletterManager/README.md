@@ -46,7 +46,7 @@ This form place in your web page. Newsletter Service can manage many of your pro
 ![Subscribe](https://raw.githubusercontent.com/Kibo/google_apps_scripts/master/screens/subscribe_screen.png)
 
 ### Resources
-- [Newsletter service with Google Apps Script](#)
+- [Newsletter service with Google Apps Script](http://tomasjurman.blogspot.cz/2014/04/newsletter-service-on-google-apps-script.html)
 
 ###Recommendation
 I was inspired by a great book [Google Apps Script for Beginners](http://bit.ly/OBwIqz)<br>
