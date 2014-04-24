@@ -9,8 +9,8 @@
 
 ###Recommendation
 I was inspired by a great book [Google Apps Script for Beginners](http://bit.ly/OBwIqz)<br>
-[![Google Apps Script for Beginners](http://dgdsbygo8mp3h.cloudfront.net/sites/default/files/imagecache/productview_larger/2177OT_Google%20Apps.jpg)](http://bit.ly/OBwIqz)
-<br>
+
+<img align="left" src="http://dgdsbygo8mp3h.cloudfront.net/sites/default/files/imagecache/productview_larger/2177OT_Google%20Apps.jpg" alt="Google Apps Script for Beginners">
 **The book contains**:
 - Spreadsheet automation
 - Manipulate Forms
